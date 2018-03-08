@@ -31,7 +31,7 @@ test("apply more discounts", t => {
   t.is(total, 45);
 });
 
-test("apply discounts with multiple types of items", t => {
+test("apply discounts with multiple SKUs of items", t => {
   const total = checkout("AAABBC");
   t.is(total, 195);
 });
@@ -43,5 +43,10 @@ test("apply discounts with items in any order", t => {
 
 test("apply multiple discounts with lots of items", t => {
   const total = checkout("ABACADACABA");
-  t.is(total, 130 + 130 + 45 + 20 + 15);
+  t.is(total, 130 + 130 + 45 + 20 + 20 + 15);
+});
+
+test("apply discounts to some but not all items with the same SKU", t => {
+  const total = checkout("AAAA");
+  t.is(total, 130 + 50);
 });
