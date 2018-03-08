@@ -20,3 +20,13 @@ test("check out multiple items", t => {
   const total = checkout("BCD");
   t.is(total, 65);
 });
+
+test("apply discounts", t => {
+  const total = checkout("AAA");
+  t.is(total, 130);
+});
+
+test("apply more discounts", t => {
+  const total = checkout("BB");
+  t.is(total, 45);
+});
