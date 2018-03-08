@@ -61,6 +61,11 @@ test("discount lots of Bs when there are twice as many Es", t => {
   t.is(total, 240);
 });
 
+test("discount extra Bs as usual when there aren't enough Es", t => {
+  const total = checkout("EEEEBBEEBBB");
+  t.is(total, 240 + 45);
+});
+
 test("if there's an invalid SKU, return -1", t => {
   const total = checkout("foo");
   t.is(total, -1);
