@@ -47,8 +47,8 @@ test("apply discounts with items in any order", t => {
 });
 
 test("apply multiple discounts with lots of items", t => {
-  const total = checkout("AABACADACABAA");
-  t.is(total, 200 + 130 + 45 + 20 + 20 + 15);
+  const total = checkout("AFABACADACABAFA");
+  t.is(total, 200 + 130 + 45 + 20 + 20 + 15 + 20);
 });
 
 test("apply discounts to some but not all items with the same SKU", t => {
@@ -69,6 +69,11 @@ test("discount lots of Bs when there are twice as many Es", t => {
 test("discount extra Bs as usual when there aren't enough Es", t => {
   const total = checkout("EEEEBBEEBBB");
   t.is(total, 240 + 45);
+});
+
+test("buy 2 Fs, get one F free", t => {
+  const total = checkout("FFF");
+  t.is(total, 20);
 });
 
 test("if there's an invalid SKU, return -1", t => {
