@@ -92,8 +92,8 @@ test('favour discounting more expensive items with an "any of" discount', t => {
 });
 
 test("apply multiple discounts with lots of items", t => {
-  const total = checkout("AFABACADACABAFARQRQRQR");
-  t.is(total, 200 + 130 + 45 + 20 + 20 + 15 + 20 + 60 + 200);
+  const total = checkout("AFABACADACABAFARQRQRQRSTXYZ");
+  t.is(total, 200 + 130 + 45 + 20 + 20 + 15 + 20 + 60 + 200 + 45 + 20 + 17);
 });
 
 test("if there's an invalid SKU, return -1", t => {
