@@ -73,7 +73,7 @@ test("buy 2 Fs, get one F free", t => {
 
 test("apply multiple discounts with lots of items", t => {
   const total = checkout("AFABACADACABAFARQRQRQR");
-  t.is(total, 200 + 130 + 45 + 20 + 20 + 15 + 20);
+  t.is(total, 200 + 130 + 45 + 20 + 20 + 15 + 20 + 60 + 200);
 });
 
 test("if there's an invalid SKU, return -1", t => {
