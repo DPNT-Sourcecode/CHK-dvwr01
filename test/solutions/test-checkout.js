@@ -71,21 +71,6 @@ test("buy 2 Fs, get one F free", t => {
   t.is(total, 20);
 });
 
-test("buy any 3 of S, T, X, Y or Z for 45 (STX)", t => {
-  const total = checkout("STX");
-  t.is(total, 45);
-});
-
-test("buy any 3 of S, T, X, Y or Z for 45 (XYZ)", t => {
-  const total = checkout("XYZ");
-  t.is(total, 45);
-});
-
-test("buy any 3 of S, T, X, Y or Z for 45 (YXT)", t => {
-  const total = checkout("YXT");
-  t.is(total, 45);
-});
-
 test("apply multiple discounts with lots of items", t => {
   const total = checkout("AFABACADACABAFARQRQRQR");
   t.is(total, 200 + 130 + 45 + 20 + 20 + 15 + 20 + 60 + 200);
