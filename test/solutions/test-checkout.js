@@ -51,6 +51,11 @@ test("apply discounts to some but not all items with the same SKU", t => {
   t.is(total, 130 + 50);
 });
 
+test("discount a B when there are two Es", t => {
+  const total = checkout("EEB");
+  t.is(total, 80);
+});
+
 test("if there's an invalid SKU, return -1", t => {
   const total = checkout("foo");
   t.is(total, -1);
