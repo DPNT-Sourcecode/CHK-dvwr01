@@ -50,3 +50,18 @@ test("apply discounts to some but not all items with the same SKU", t => {
   const total = checkout("AAAA");
   t.is(total, 130 + 50);
 });
+
+test("if there's an invalid SKU, return -1", t => {
+  const total = checkout("foo");
+  t.is(total, -1);
+});
+
+test("if the input isn't a string, return -1", t => {
+  const total = checkout(99);
+  t.is(total, -1);
+});
+
+test("if the input is undefined, return -1", t => {
+  const total = checkout();
+  t.is(total, -1);
+});
