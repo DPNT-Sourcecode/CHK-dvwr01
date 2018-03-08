@@ -21,12 +21,17 @@ test("check out multiple items", t => {
   t.is(total, 65);
 });
 
-test("apply discounts", t => {
+test("apply discounts to 3 As", t => {
   const total = checkout("AAA");
   t.is(total, 130);
 });
 
-test("apply more discounts", t => {
+test("apply discounts to 5 As", t => {
+  const total = checkout("AAAAA");
+  t.is(total, 200);
+});
+
+test("apply discounts to 2 Bs", t => {
   const total = checkout("BB");
   t.is(total, 45);
 });
