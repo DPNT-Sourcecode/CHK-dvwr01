@@ -86,6 +86,11 @@ test("buy any 3 of S, T, X, Y or Z for 45 (YXT)", t => {
   t.is(total, 45);
 });
 
+test('favour discounting more expensive items with an "any of" discount', t => {
+  const total = checkout("STXYZ");
+  t.is(total, 45 + 20 + 17);
+});
+
 test("apply multiple discounts with lots of items", t => {
   const total = checkout("AFABACADACABAFARQRQRQR");
   t.is(total, 200 + 130 + 45 + 20 + 20 + 15 + 20 + 60 + 200);
