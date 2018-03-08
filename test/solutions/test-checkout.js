@@ -15,3 +15,8 @@ test("check out a different item", t => {
   const total = checkout("B");
   t.is(total, 30);
 });
+
+test("check out multiple items", t => {
+  const total = checkout("BCD");
+  t.is(total, 65);
+});
